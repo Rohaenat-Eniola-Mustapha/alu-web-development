@@ -7,7 +7,9 @@ body {
 }
 header {
     margin: 0;
-    padding: 0;
+    background-color: #333; /* Change to your preferred background color */
+    color: #fff; /* Change to your preferred text color */
+    padding: 10px;
     width: 100%;
 }
 main {
@@ -21,6 +23,11 @@ main {
 article {
     float: left;
     flex: 2;
+    font-family: Arial, sans-serif; /* Choose a preferred font */
+    color: #333; /* Set the text color */
+    background-color: #f7f7f7; /* Set the background color */
+    padding: 20px; /* Add padding to the content for spacing */
+    border-radius: 5px;
 }
 aside {
     float: left;
@@ -28,10 +35,19 @@ aside {
 }
 footer {
     margin: 0;
-    padding: 0;
+    background-color: #333; /* Change to your preferred background color */
+    color: #fff; /* Change to your preferred text color */
+    padding: 10px; /* Add some padding to the footer for spacing */
+    text-align: center;
     width: 100%;
 }
 article,
 aside {
   overflow-y: auto; /* Enables vertical scrolling if content overflows */
 }
+.logo {
+    font-size: 24px; /* Adjust the size as needed */
+    color: #007bff; /* Change the color to your preference */
+    padding-right: 10px; /* Add some spacing between the logo and menu items */
+  }
+
