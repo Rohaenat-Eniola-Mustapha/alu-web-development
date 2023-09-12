@@ -12,14 +12,16 @@ main {
     padding: 0;
     width: 100%;
 }
+article {
+    float: left;
+    width: 50%;
+}
+aside {
+    float: left;
+    width: 50%;
+}
 footer {
     margin: 0;
     padding: 0;
     width: 100%;
-}
-article {
-    float: left;
-}
-aside {
-    float: left;
 }
