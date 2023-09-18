@@ -18,5 +18,14 @@ So wish me good luck!
 
 ![Uploading woman-taking-care-cleaning-dirty-house.jpg…](https://github.com/[Rohaenat-Eniola-Mustapha]/[alu-web-development]/blob/[main]/woman-taking-care-cleaning-dirty-house.jpg?raw=true)
 
+# First Task
+1. Header
+Let’s start by the top: **the header**
 
+Here the wireframe of it:
 
+* Create the HTML skeleton (html, head, body, etc.)
+* In the body, add an header tag
+* Inside this header:
+     * Add a link element with an image inside
+     * Add a block of 3 link elements
