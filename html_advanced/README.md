@@ -16,7 +16,7 @@ duplicate it to my drafts to have access to **all the design details.**
 So wish me good luck!
 :)
 
-![Uploading woman-taking-care-cleaning-dirty-house.jpg…]()
+![Uploading woman-taking-care-cleaning-dirty-house.jpg…](https://github.com/[Rohaenat-Eniola-Mustapha]/[alu-web-development]/blob/[main]/woman-taking-care-cleaning-dirty-house.jpg?raw=true)
 
 
 
