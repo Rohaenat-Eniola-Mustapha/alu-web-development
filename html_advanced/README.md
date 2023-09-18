@@ -13,7 +13,10 @@ on the *HTML Structure only*. Which means:
 create an account to access the final result and 
 duplicate it to my drafts to have access to **all the design details.**
 
-So wish me goodluck!
+So wish me good luck!
 :)
 
-! /c/Users/hp/Pictures/woman-taking-care-cleaning-dirty-house.jpg
+![Uploading woman-taking-care-cleaning-dirty-house.jpg…]()
+
+
+
