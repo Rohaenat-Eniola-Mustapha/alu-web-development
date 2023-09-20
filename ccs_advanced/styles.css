@@ -11,4 +11,15 @@ header{
     width: 1448.15px;
     height: 1055px;
     flex-shrink: 0;
+    background: url(<path-to-image>), lightgray 0px 0px / 100% 100% no-repeat;
+}
+
+.heading{
+    color: #FFF;
+    text-align: center;
+    font-family: Source Sans Pro;
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
