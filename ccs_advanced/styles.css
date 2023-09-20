@@ -6,3 +6,9 @@ body{
 header{
     margin:0%
 }
+
+.background{
+    width: 1448.15px;
+    height: 1055px;
+    flex-shrink: 0;
+}
