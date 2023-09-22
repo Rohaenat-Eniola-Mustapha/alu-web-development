@@ -13,6 +13,10 @@ header {
     justify-content: space-between;
 }
 
+.logo{
+    text-align: left;
+}
+
 .nav {
     text-align:right;
     color: #FFF;
@@ -33,6 +37,10 @@ header {
     color: #fff;
     text-decoration: none;
     margin-left: 10px;
+}
+
+.nav a:hover {
+    color: #C271FF;
 }
 
 /* MAIN */
@@ -69,5 +77,11 @@ header {
     border-radius: 22px;
     cursor: pointer;
     box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.50);
+    color: #FFF;
+    text-align: center;
+    font-family: Source Sans Pro;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
   }
-  
