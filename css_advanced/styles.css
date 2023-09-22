@@ -1,10 +1,3 @@
-* HTML */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* BODY */
 .background-section {
     background-image: url(./background.png);
