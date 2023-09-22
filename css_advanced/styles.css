@@ -51,7 +51,8 @@ header {
     font-size: 120px;
     font-style: normal;
     font-weight: 700;
-    line-height: normal
+    line-height: normal;
+    margin-bottom: 10px;
 }
 
 .text{
@@ -63,7 +64,6 @@ header {
     font-weight: 700;
     line-height: normal;
     word-spacing: 59px;
-    margin-top: 20px;
 }
 
 .button-container{
