@@ -1,6 +1,8 @@
 /* BODY */
 body{
     font-family: 'Source Sans 3', sans-serif;
+    margin: 0px;
+    padding: 0px;
 }
 
 .background-section {
@@ -94,8 +96,7 @@ header {
   .bold{
     text-align: center;
     font-size: 32px;
-    font-style: bold;
-    font-weight: 700;
+    font-weight: bold;
     line-height: normal;
     color: #C271FF;
     margin-top: 168px;
@@ -125,7 +126,7 @@ header {
 .bubble{
     text-align: center;
     padding: 20px;
-    margin: 0 1px 5px;
+    margin: 0px;
     flex: 1;
 }
 
@@ -133,6 +134,59 @@ header {
     max-width: 100px;
 }
 
+.quote-section{
+    background-color: #C271FF;
+    margin: 0px;
+    padding: 20px;
+    align-items: center;
+    background-size: 100%;
+    box-sizing: border-box;
+}
 .font{
     font-weight: lighter;
+}
+
+.blockquote{
+    display: flex;
+    align-items: center;
+    margin: 23.5px;
+    width: 100%;
+}
+
+.blockquote img{
+    max-width: 100%;
+    text-align: left;
+    display: flex;
+    margin: 100px;
+}
+
+.quote-person{
+    flex-grow: 1;
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+}
+
+.blockquote blockquote {
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.person{
+    margin-right: 30px;
+}
+
+.videos{
+    background-color: #FFF;
+    margin: 20px;
+    padding: 20px;
+}
+
+.videos-heading{
+    text-align: center;
+    color: black;
+    font-weight: lighter;
+    font-size: 32px;
 }
