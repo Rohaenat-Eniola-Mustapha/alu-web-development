@@ -1,7 +1,58 @@
-header{
-    position: absolute;
+* HTML */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-main{
-    position: absolute;
-    margin: 0px, auto;
+
+/* BODY */
+.background-section {
+    background-image: url(./background.png);
+    background-blend-mode: color;
+    background-size: contain;
+    /* Additional CSS for positioning and sizing the section */
 }
+
+/* HEADER */
+header {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav {
+    align-self: flex-end;
+    text-align:right;
+    color: #FFF;
+    font-family: Source Sans Pro;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    display: inline-flex;
+    height: 15px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 52px;
+    flex-shrink: 0;
+
+}
+
+.nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* MAIN */
