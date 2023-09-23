@@ -185,6 +185,7 @@ header {
     background-color: #FFF;
     margin: 20px;
     padding: 20px;
+    justify-content: space-evenly;
 }
 
 .videos-heading{
@@ -308,4 +309,32 @@ header {
     font-style: normal;
     font-weight: 400;
     line-height: 24px; /* 171.429% */
+}
+
+.footer{
+    background-color: #071629;
+    margin-top: 30px;
+    padding-top: 50px;
+    box-sizing: border-box;
+    height: 200px;
+    flex-shrink: 0;
+}
+.pic{
+    padding-left: 100px;
+    max-width: 100%;
+}
+.socials{
+    float: right;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    max-width: 100%;
+}
+.text{
+    text-align: center;
+    color: #FFF;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.3517;
 }
