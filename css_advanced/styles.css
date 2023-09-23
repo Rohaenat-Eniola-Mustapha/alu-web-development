@@ -91,6 +91,8 @@ header {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin: 20px;
+    align-items: center;
   }
 
   .bold{
@@ -200,8 +202,6 @@ header {
     line-height: normal;
     margin-bottom: 10px;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .text-sub{
@@ -229,9 +229,9 @@ header {
 .info{
     text-align: left;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
 }
 
 .time{
@@ -241,4 +241,35 @@ header {
     font-style: normal;
     font-weight: 600;
     line-height: 27px; /* 192.857% */
+}
+
+.free-membership{
+    margin-top: 70px;
+    padding-top: 40px;
+    padding-bottom: 70px;
+    background-color: #071629;
+}
+
+.l1{
+    text-align: center;
+    color: #FFF;
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.member{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-left: 0px;
+    margin-top: 50px;
+    text-align: center;
+    padding: auto;
+}
+
+.color{
+    color: #FFF;
 }
