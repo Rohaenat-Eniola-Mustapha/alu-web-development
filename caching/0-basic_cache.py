@@ -4,7 +4,8 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
-    """ BasicCache class that inherits from BaseCaching and is a basic caching system """
+    """ BasicCache class that inherits
+    from BaseCaching and is a basic caching system """
 
     def put(self, key, item):
         """
