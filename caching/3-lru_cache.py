@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ LRU Caching Module """
 from base_caching import BaseCaching
+from collections import OrderedDict
 
 
 class LRUCache(BaseCaching):
