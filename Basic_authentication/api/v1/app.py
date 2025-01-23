@@ -9,8 +9,8 @@ from api.v1.views import app_views
 app = Flask(__name__)
 app.register_blueprint(app_views)
 
-@app.errorhandler(401)
 
+@app.errorhandler(401)
 def unauthorized_error(error):
     """Error handler for 401 Unauthorized"""
     return jsonify({"error": "Unauthorized"}), 401
