@@ -10,4 +10,5 @@ app_views = Blueprint('app_views', __name__)
 def unauthorized():
     """Endpoint to trigger 401 Unauthorized error"""
 
+
     abort(401)
