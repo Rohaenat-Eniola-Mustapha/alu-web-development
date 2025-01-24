@@ -3,6 +3,7 @@
 Module for the Authentication
 """
 from typing import List, TypeVar
+import os
 
 
 class Auth:
@@ -51,3 +52,19 @@ class Auth:
         Currently returns None.
         """
         return None
+
+    def session_cookie(self, request=None):
+        """
+        Retrieves the session cookie from the Flask request object.
+
+        Args:
+            request (Flask Request object): The request object.
+
+        Returns:
+            str or None: The session ID if the cookie exists, otherwise None.
+        """
+        if request is None:
+            return None
+
+        session_name = os.getenv('SESSION_NAME', '_my_session_id')
+        return request.cookies.get(session_name)
