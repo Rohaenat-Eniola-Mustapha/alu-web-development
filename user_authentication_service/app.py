@@ -26,7 +26,8 @@ def register_user():
 
     Expects "email" and "password" as form data.
     If successful, returns a JSON payload with the email and a success message.
-    If the email is already registered, returns an error message with a 400 status code.
+    If the email is already registered, returns an error message with a 400 
+    status code.
     """
     email = request.form.get("email")
     password = request.form.get("password")
