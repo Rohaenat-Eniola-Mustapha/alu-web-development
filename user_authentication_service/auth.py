@@ -25,7 +25,9 @@ class Auth:
             hashed_password = bcrypt.hashpw(
                 password.encode(), bcrypt.gensalt()
                 )
-            user = self._db.add_user(email=email, hashed_password=hashed_password)
+            user = self._db.add_user(
+                email=email, hashed_password=hashed_password
+                )
             return user
 
     def valid_login(self, email: str, password: str) -> bool:
