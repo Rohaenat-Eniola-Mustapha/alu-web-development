@@ -1,46 +1,32 @@
 #!/usr/bin/env python3
 """
-Authentication module for user management.
+Authentication module
 """
-
+import uuid
+import bcrypt
 from db import DB
 from user import User
-from sqlalchemy.exc import NoResultFound
-from typing import Optional
-from auth import _hash_password
-import bcrypt
+from sqlalchemy.orm.exc import NoResultFound
 
 
 class Auth:
-    """Auth class to interact with the authentication database."""
+    """Auth class to manage authentication"""
 
     def __init__(self):
+        """Initialize the Auth class with a database instance"""
         self._db = DB()
 
     def register_user(self, email: str, password: str) -> User:
-        """
-        Register a new user with the given email and password.
-
-        Args:
-            email (str): The email of the user.
-            password (str): The user's password.
-
-        Returns:
-            User: The newly created User object.
-
-        Raises:
-            ValueError: If a user with the given email already exists.
-        """
+        """Registers a new user with a hashed password"""
         try:
-            # Check if a user with this email already exists
-            self._db._session.query(User).filter_by(email=email).one()
+            self._db.find_user_by(email=email)
             raise ValueError(f"User {email} already exists")
         except NoResultFound:
-            # Hash the password
-            hashed_password = _hash_password(password)
-
-            # Create and return the new user
-            return self._db.add_user(email, hashed_password)
+            hashed_password = bcrypt.hashpw(
+                password.encode(), bcrypt.gensalt()
+                )
+            user = self._db.add_user(email=email, hashed_password=hashed_password)
+            return user
 
     def valid_login(self, email: str, password: str) -> bool:
         """Validates user credentials"""
@@ -51,3 +37,8 @@ class Auth:
         except NoResultFound:
             return False
         return False
+
+
+def _generate_uuid() -> str:
+    """Generate a new UUID and return its string representation"""
+    return str(uuid.uuid4())
