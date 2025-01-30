@@ -34,11 +34,23 @@ class Auth:
         """Validates user credentials"""
         try:
             user = self._db.find_user_by(email=email)
-            if bcrypt.checkpw(password.encode(), user.hashed_password):
+            if bcrypt.checkpw(
+                password.encode(), user.hashed_password
+                ):
                 return True
         except NoResultFound:
             return False
         return False
+
+    def create_session(self, email: str) -> str:
+        """Creates a session ID for a user and stores it in the database"""
+        try:
+            user = self._db.find_user_by(email=email)
+            session_id = _generate_uuid()
+            self._db.update_user(user.id, session_id=session_id)
+            return session_id
+        except NoResultFound:
+            return None
 
 
 def _generate_uuid() -> str:
