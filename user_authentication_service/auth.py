@@ -8,6 +8,7 @@ from user import User
 from sqlalchemy.exc import NoResultFound
 from typing import Optional
 from auth import _hash_password
+import bcrypt
 
 
 class Auth:
@@ -40,3 +41,13 @@ class Auth:
 
             # Create and return the new user
             return self._db.add_user(email, hashed_password)
+
+    def valid_login(self, email: str, password: str) -> bool:
+        """Validates user credentials"""
+        try:
+            user = self._db.find_user_by(email=email)
+            if bcrypt.checkpw(password.encode(), user.hashed_password):
+                return True
+        except NoResultFound:
+            return False
+        return False
