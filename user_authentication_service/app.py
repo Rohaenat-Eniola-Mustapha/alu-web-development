@@ -1,46 +1,53 @@
 #!/usr/bin/env python3
 """
-Basic Flask app with user registration endpoint.
+Authentication module
 """
-
-from flask import Flask, jsonify, request
-from auth import Auth
-
-app = Flask(__name__)
-AUTH = Auth()
-
-
-@app.route("/", methods=["GET"])
-def home():
-    """
-    Home route.
-    Returns a JSON payload with a welcome message.
-    """
-    return jsonify({"message": "Bienvenue"})
+import uuid
+import bcrypt
+from db import DB
+from user import User
+from sqlalchemy.orm.exc import NoResultFound
 
 
-@app.route("/users", methods=["POST"])
-def register_user():
-    """
-    POST /users route for registering a user.
+class Auth:
+    """Auth class to manage authentication"""
 
-    Expects "email" and "password" as form data.
-    If successful, returns a JSON payload with the email and a success message.
-    If the email is already registered, returns an error message with a 400
-    status code.
-    """
-    email = request.form.get("email")
-    password = request.form.get("password")
+    def __init__(self):
+        """Initialize the Auth class with a database instance"""
+        self._db = DB()
 
-    if not email or not password:
-        return jsonify({"message": "email and password are required"}), 400
+    def register_user(self, email: str, password: str) -> User:
+        """Registers a new user with a hashed password"""
+        try:
+            self._db.find_user_by(email=email)
+            raise ValueError(f"User {email} already exists")
+        except NoResultFound:
+            hashed_password = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+            user = self._db.add_user(
+                email=email, hashed_password=hashed_password)
+            return user
 
-    try:
-        user = AUTH.register_user(email, password)
-        return jsonify({"email": user.email, "message": "user created"})
-    except ValueError:
-        return jsonify({"message": "email already registered"}), 400
+    def valid_login(self, email: str, password: str) -> bool:
+        """Validates user credentials"""
+        try:
+            user = self._db.find_user_by(email=email)
+            if bcrypt.checkpw(password.encode(), user.hashed_password):
+                return True
+        except NoResultFound:
+            return False
+        return False
+
+    def create_session(self, email: str) -> str:
+        """Creates a session ID for a user and stores it in the database"""
+        try:
+            user = self._db.find_user_by(email=email)
+            session_id = _generate_uuid()
+            self._db.update_user(user.id, session_id=session_id)
+            return session_id
+        except NoResultFound:
+            return None
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+def _generate_uuid() -> str:
+    """Generate a new UUID and return its string representation"""
+    return str(uuid.uuid4())
